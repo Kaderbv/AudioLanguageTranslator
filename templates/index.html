@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Read File Without Saving in Flask</title> 
+		<link href="./static/styles/style.css" type="text/css" rel="stylesheet">
+	</head> 
+	<body> 
+		<form method="post" enctype="multipart/form-data"  action="{{ url_for('handle_submit') }}" style="text-align: center !important;"> 
+			<br>
+			<h1>AI Audio Assitance</h1>
+			<dl class="dropdown"> 
+				<dt><label for="fromLang" style="font-weight: bold;">From</label></dt> 
+				<dd>
+					<select class="ul" name="fromLang" id="fromLang">
+						<option class="li"  value="en">English</option>
+						<option class="li"  value="es">Spanish</option>
+						<option class="li"  value="fr">French</option>
+					</select>					
+				</dd>
+			</dl>
+			
+			<dl class="dropdown"> 
+				<dt><label for="toLang" style="font-weight: bold;">To</label></dt> 
+				<dd>
+					<select class="ul" name="toLang" id="toLang">
+						<option class="li"  value="en">English</option>
+						<option class="li"  value="es">Spanish</option>
+						<option class="li"  value="fr">French</option>
+					</select>					
+				</dd>
+			</dl>	
+			<br>	  
+			<br>
+			<div id="controls">
+				<button id="recordButton">Record</button>
+				<button id="pauseButton" disabled>Pause</button>
+				<button id="stopButton" disabled>Stop</button>
+				</div>
+				<div id="formats" style="visibility: hidden;">Format: start recording to see sample rate</div>
+				<p><strong>Recordings:</strong></p>
+				<ol id="recordingsList"></ol>
+				<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+				<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+				<script src="/static/js/app.js"></script>
+				
+			<br>
+			<br>
+			
+		</form> 
+	</body> 
+</html> 
